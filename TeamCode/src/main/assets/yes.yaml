@@ -4,4 +4,4 @@ commands:
   - name: wait
     duration: 5000
   - name: motor
-    duration: off
+    action: off
