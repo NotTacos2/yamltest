@@ -1,0 +1,8 @@
+paths file: paths.pp
+commands:
+  - name: motor
+    action: on
+  - name: wait
+    duration: 5000
+  - name: motor
+    duration: off
