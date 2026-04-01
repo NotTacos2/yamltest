@@ -10,7 +10,6 @@ import java.util.Objects;
 
 import dev.nextftc.core.commands.delays.Delay;
 
-
 public class Commands {
 
     private static final Map<String, CommandFactory> commands = new HashMap<>(Map.of(
