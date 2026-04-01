@@ -43,9 +43,6 @@ public class auto extends NextFTCOpMode {
         List<Map<String, Object>> commandList = (List<Map<String, Object>>) data.get("commands");
         commandFactories = Commands.getCommands();
 
-        // ---------------------------------------------------------
-        // BUILD ALL COMMANDS
-        // ---------------------------------------------------------
         ArrayList<Command> builtCommands = new ArrayList<>();
 
         if (commandList == null) {
@@ -58,15 +55,9 @@ public class auto extends NextFTCOpMode {
             }
         }
 
-        // Take all of the commands that we have built and put them in one sequential command
         allCommands = new SequentialGroup(
                 builtCommands.toArray(new Command[0])
         );
-    }
-
-    @Override
-    public void onWaitForStart() {
-        // Here, if the robot allows for it, you may want to do vision
     }
 
     @Override
@@ -79,12 +70,8 @@ public class auto extends NextFTCOpMode {
 
     @Override
     public void onUpdate() {
-
         telemetry.update();
 
-
-
-        // If we are out of time, stop the auto. Don't want to accidentally go past time
         if (timer.seconds() >= 30 && !isDone) {
             telemetry.addLine("Out of time, stopping commands");
             allCommands.stop(true);
