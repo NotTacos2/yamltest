@@ -1,4 +1,3 @@
-paths file: paths.pp
 commands:
   - name: motor
     action: on
